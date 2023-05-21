@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Styles
+
+This project was styled with:
+# Tailwind CSS.
+
+### Aditional installs:
+# Axios
+
 ## Available Scripts
 
 In the project directory, you can run:
