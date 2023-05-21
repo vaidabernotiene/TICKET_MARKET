@@ -1,11 +1,9 @@
 import { useState } from "react";
 
-import { Login } from "./Login";
-import { Register } from "./Register";
-import { menu, close } from "../assets";
-import { defaults } from "autoprefixer";
+import { close, logo, menu } from "../assets";
+import { navLinks } from "../constants";
 
-const Navbar = () => {
+const NavBar = () => {
   const [toggle, setToggle] = useState(false);
 
   const onHandlerBurger = () => {
@@ -13,9 +11,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
-
+    <nav className="bg-blue-gradient w-full flex py-6 justify-between items-center navbar">
+      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+        {navLinks.map((nav, index) => (
+          <li
+            key={nav.id}
+            className={`font-popins font-normal cursor-pointer text-[16px] 
+            ${index === navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+          </li>
+        ))}
+      </ul>
       {/* ONLY FOR MOBILE DEVICES */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
@@ -29,10 +37,22 @@ const Navbar = () => {
           className={`${
             toggle ? "flex" : "hidden"
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-        ></div>
+        >
+          <ul className="list-none flex flex-col justify-end items-center flex-1">
+            {navLinks.map((nav, index) => (
+              <li
+                key={nav.id}
+                className={`font-popins font-normal cursor-pointer text-[16px] 
+            ${index === navLinks.length - 1 ? "mr-0" : "mb-4"} text-white`}
+              >
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;

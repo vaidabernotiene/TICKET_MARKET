@@ -4,7 +4,7 @@ import "../App.css";
 export const Login = () => {
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-1/3 p-6 border rounded shadow-lg container">
+      <div className="w-1/2 p-6 border rounded shadow-lg container">
         <h1 className="text-3xl mb-4">Login</h1>
         <form>
           <div className="mb-4">

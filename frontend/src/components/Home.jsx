@@ -1,5 +1,9 @@
-import Navbar from "./Navbar";
+import NavBar from "./Navbar";
 
 export const Home = () => {
-  return <div><Navbar /></div>;
+  return (
+    <div>
+      <NavBar/>
+    </div>
+  );
 };

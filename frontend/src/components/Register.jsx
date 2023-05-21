@@ -1,7 +1,9 @@
-export const Register= ()=>{
+import "../App.css";
 
-    return (
-        <div className="w-1/3 p-6 border rounded shadow-lg ml-8 container">
+export const Register = () => {
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-1/2 p-6 border rounded shadow-lg ml-8 container">
         <h1 className="text-3xl mb-4">Register</h1>
         <form>
           <div className="mb-4">
@@ -11,6 +13,16 @@ export const Register= ()=>{
             <input
               type="text"
               id="name"
+              className="w-full border px-4 py-2 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="name" className="block mb-2">
+              Surname
+            </label>
+            <input
+              type="text"
+              id="sernamename"
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -41,6 +53,7 @@ export const Register= ()=>{
             Register
           </button>
         </form>
-        </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
