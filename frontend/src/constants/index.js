@@ -13,6 +13,14 @@ export const navLinks = [
     id: "register",
     title: "Register",
   },
+  {
+    id: "new_user",
+    title: "New User",
+  },
+  {
+    id: "users_list",
+    title: "Users List",
+  },
 ];
 
 export const eventUsers = [

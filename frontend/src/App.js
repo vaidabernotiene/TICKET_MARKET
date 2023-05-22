@@ -3,19 +3,23 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import styles from "./style";
 
-import { Home } from "./components/Home";
-import { Login } from "./components/Login";
-import { Register } from "./components/Register";
-import NavBar from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import Footer from "./components/Footer";
+import {
+  Navbar,
+  Home,
+  Login,
+  Register,
+  Hero,
+  EventUserRegistrationForm,
+  EventUsersList,
+  Footer,
+} from "./components";
 
 function App() {
   return (
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <NavBar />
+          <Navbar />
           {/* <div className={`bg-primary ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
               <Hero />
@@ -26,6 +30,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/new_user" element={<EventUserRegistrationForm />} />
+            <Route path="/users_list" element={<EventUsersList />} />
           </Routes>
           <Footer />
         </div>

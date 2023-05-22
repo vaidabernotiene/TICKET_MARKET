@@ -30,6 +30,7 @@ export const Login = () => {
           </div>
           <Button styles={`mt-10`} text='Login'></Button>
         </form>
+        <p>Need an Account? Click <a href="#">HERE</a></p>
       </div>
     </div>
   );

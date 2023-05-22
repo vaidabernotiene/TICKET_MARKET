@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
-const NavBar = () => {
+export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const onHandlerBurger = () => {
@@ -61,5 +61,3 @@ const NavBar = () => {
     </nav>
   );
 };
-
-export default NavBar;

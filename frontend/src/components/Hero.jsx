@@ -1,6 +1,5 @@
 import styles from "../style";
 import { GetStart } from "./GetStart";
-import { Home } from "./Home";
 
 export const Hero = () => {
     return (

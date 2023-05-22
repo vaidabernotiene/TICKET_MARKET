@@ -2,7 +2,7 @@ import styles from "../style";
 import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
 
-const Footer = () => {
+export const Footer = () => {
 
   // const onLinkClick = () => {
   //   socialMedia.map((social) => window.open(social.link));
@@ -72,5 +72,3 @@ const Footer = () => {
     </section>
   );
 };
-
-export default Footer
