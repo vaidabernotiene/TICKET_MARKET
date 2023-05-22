@@ -13,11 +13,10 @@ const dbConnection = mysql.createConnection({
 });
 
 dbConnection.connect((err) => {
-  if (err) {
-    console.error("Error connecting to the database:", err);
-    return;
-  }
-  console.log("Connected to the database");
+  err
+    ? console.error("Error connecting to the database:", err)
+    : console.log("Connected to the database!")
+  return;
 });
 
 // for the first time, then DB was not built
