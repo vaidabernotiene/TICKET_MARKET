@@ -39,12 +39,12 @@ export const EventUserRegistrationForm = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="phone-number" className="block mb-2">
+            <label htmlFor="phone" className="block mb-2">
               Phone number
             </label>
             <input
               type="text"
-              id="phone-number"
+              id="phone"
               className="w-full border px-4 py-2 rounded"
             />
           </div>

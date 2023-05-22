@@ -23,7 +23,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              id="sernamename"
+              id="surname"
               className="w-full border px-4 py-2 rounded"
             />
           </div>
