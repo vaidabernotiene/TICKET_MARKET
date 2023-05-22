@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -32,6 +33,16 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.bg-violet-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #010300,
+    #190451,
+    #f41c43,
+    #C772C7
+  );
 }
 
 .bg-blue-gradient {

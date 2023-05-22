@@ -7,13 +7,16 @@ module.exports = {
     extend: {
       colors: {
         primary: "#00040f",
-        secondary: "#00f6ff",
+        secondary: "#f41c43",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        redHat: ["Red Hat Display", "sans-serif"],
       },
+      // backgroundImage:{
+      //   image:"c:/Users/Vaida/OneDrive/Stalinis kompiuteris/FEUA1/TICKET_MARKET/frontend/src/assets/hero3.jpg",
+      // },
     },
     screens: {
       xs: "480px",

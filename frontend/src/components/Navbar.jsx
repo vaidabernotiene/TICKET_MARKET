@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
@@ -11,7 +12,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-blue-gradient w-full flex py-6 justify-between items-center navbar">
+    <nav className="bg-primary w-full flex p-6 justify-between items-center navbar">
       <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -20,10 +21,13 @@ const NavBar = () => {
             className={`font-popins font-normal cursor-pointer text-[16px] 
             ${index === navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <NavLink href="#" to={`/${nav.id}`}>
+              {nav.title}
+            </NavLink>
           </li>
         ))}
       </ul>
+
       {/* ONLY FOR MOBILE DEVICES */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
@@ -32,6 +36,7 @@ const NavBar = () => {
           className="w-[28px] h-[28px] object-contain"
           onClick={onHandlerBurger}
         />
+
         {/* checking if toggle is turn on*/}
         <div
           className={`${
@@ -42,10 +47,12 @@ const NavBar = () => {
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-popins font-normal cursor-pointer text-[16px] 
+                className={`font-redHat font-normal cursor-pointer text-[16px] 
             ${index === navLinks.length - 1 ? "mr-0" : "mb-4"} text-white`}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <NavLink href="#" to={`/${nav.id}`}>
+                  {nav.title}
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -1,9 +1,10 @@
 import React from "react";
+import Button from "./Button";
 import "../App.css";
 
 export const Login = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="bg-blue-gradient flex justify-center items-center h-screen">
       <div className="w-1/2 p-6 border rounded shadow-lg container">
         <h1 className="text-3xl mb-4">Login</h1>
         <form>
@@ -27,12 +28,7 @@ export const Login = () => {
               className="w-full border px-4 py-2 rounded"
             />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Login
-          </button>
+          <Button styles={`mt-10`} text='Login'></Button>
         </form>
       </div>
     </div>

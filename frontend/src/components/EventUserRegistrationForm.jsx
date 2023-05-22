@@ -1,11 +1,12 @@
 import "../App.css";
 import Button from "./Button";
+import styles from "../style";
 
-export const Register = () => {
+export const EventUserRegistrationForm = () => {
   return (
     <div className="bg-blue-gradient flex justify-center items-center h-screen">
       <div className="w-1/2 p-6 border rounded shadow-lg ml-8 container">
-        <h1 className="text-3xl mb-4">Register</h1>
+        <h1 className="text-3xl mb-4">Register New Event Participant</h1>
         <form>
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">
@@ -38,12 +39,12 @@ export const Register = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="password" className="block mb-2">
-              Password
+            <label htmlFor="phone-number" className="block mb-2">
+              Phone number
             </label>
             <input
-              type="password"
-              id="password"
+              type="text"
+              id="phone-number"
               className="w-full border px-4 py-2 rounded"
             />
           </div>
