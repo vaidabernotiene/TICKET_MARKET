@@ -14,12 +14,12 @@ export const navLinks = [
     title: "Register",
   },
   {
-    id: "new_user",
-    title: "New User",
+    id: "new_participant",
+    title: "New participant",
   },
   {
-    id: "users_list",
-    title: "Users List",
+    id: "participants_list",
+    title: "Participants list",
   },
 ];
 
