@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { defaultCallback } = require("../utills/dbUtills");
 
 const { dbConnection } = require("../db");
+const { defaultCallback } = require("../utills/dbUtills");
 
 // GET ------------------------------------------------------------
 router.get("/users-list", (req, res) => {
