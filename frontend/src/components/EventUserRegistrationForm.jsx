@@ -4,8 +4,8 @@ import styles from "../style";
 
 export const EventUserRegistrationForm = () => {
   return (
-    <div className="bg-blue-gradient flex justify-center items-center h-screen">
-      <div className="w-1/2 p-6 border rounded shadow-lg ml-8 container">
+    <div className="bg-blue-gradient flex justify-center items-center h-screen container">
+      <div className="w-1/2 p-6 border rounded shadow-lg ml-8 ">
         <h1 className="text-3xl mb-4">Register New Event Participant</h1>
         <form>
           <div className="mb-4">
