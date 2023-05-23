@@ -39,7 +39,7 @@ router.put("/new_participant/:id", (req, res) => {
   });
 
 // DELETE -----------------------------------------------------------
-router.delete("/new_participant/:id", (req, res) => {
+router.delete("/participants_list/:id", (req, res) => {
     const { id } = req.params;
   
     dbConnection.execute(
