@@ -4,21 +4,21 @@ import { EventUserCard } from "./EventUserCard";
 import styles from "../style";
 
 export const EventUsersList = () => {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:5000/adminusers-list')
-  //     .then(res => res.json())
-  //     .then(users => {
-  //       // setProducts(users);
-  //       console.log(users)
-  //       setIsLoading(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('http://localhost:5000/adminusers-list')
+      .then(res => res.json())
+      .then(users => {
+        // setProducts(users);
+        console.log(users)
+        setIsLoading(false);
+      });
+  }, []);
 
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <section
       className={`${styles.paddingY} ${styles.flexCenter} flex-col`}
