@@ -2,57 +2,65 @@ import { facebook, instagram, linkedin, twitter } from "../assets";
 
 export const navLinks = [
   {
-    id: "home",
-    title: "Home",
+    nonprotected: [
+      {
+        id: "home",
+        title: "Home",
+      },
+      {
+        id: "login",
+        title: "Login",
+      },
+      {
+        id: "register",
+        title: "Register",
+      },
+    ],
   },
   {
-    id: "login",
-    title: "Login",
-  },
-  {
-    id: "register",
-    title: "Register",
-  },
-  {
-    id: "new_participant",
-    title: "New participant",
-  },
-  {
-    id: "participants_list",
-    title: "Participants list",
+    protected: [
+      {
+        id: "new_participant",
+        title: "New participant",
+      },
+      {
+        id: "participants_list",
+        title: "Participants list",
+      },
+    ],
   },
 ];
 
 export const eventUsers = [
   {
     id: 0,
-    name: 'Lina',
-    surname: 'Linute',
-    email: 'lina@gmail.com',
-    phone: '+37068698625'
+    name: "Lina",
+    surname: "Linute",
+    email: "lina@gmail.com",
+    phone: "+37068698625",
   },
   {
     id: 1,
-    name: 'Benas',
-    surname: 'Beniusis',
-    email: 'benas@gmail.com',
-    phone: '+37068295525'
+    name: "Benas",
+    surname: "Beniusis",
+    email: "benas@gmail.com",
+    phone: "+37068295525",
   },
   {
     id: 2,
-    name: 'Rimas',
-    surname: 'Rimukas',
-    email: 'rimas@gmail.com',
-    phone: '+37068295525'
+    name: "Rimas",
+    surname: "Rimukas",
+    email: "rimas@gmail.com",
+    phone: "+37068295525",
   },
   {
     id: 3,
-    name: 'Loreta',
-    surname: 'Loretyte',
-    email: 'loreta@gmail.com',
-    phone: '+37068295525'
-  }
-]
+    name: "Loreta",
+    surname: "Loretyte",
+    email: "loreta@gmail.com",
+    phone: "+37068295525",
+  },
+];
 
 export const footerLinks = [
   {

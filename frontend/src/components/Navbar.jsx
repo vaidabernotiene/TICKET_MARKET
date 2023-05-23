@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
+import { AuthenticationContext } from "./AuthenticationContext";
 
-export const Navbar = () => {
+export const Navbar = ({ isLoading, onLogout }) => {
+  const { isSignedIn } = useContext(AuthenticationContext);
+  const { username } = useContext(AuthenticationContext);
   const [toggle, setToggle] = useState(false);
 
   const onHandlerBurger = () => {
@@ -14,19 +16,41 @@ export const Navbar = () => {
   return (
     <nav className="bg-primary w-full flex p-6 justify-between items-center navbar">
       <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        {navLinks.map((nav, index) => (
-          <li
-            key={nav.id}
-            className={`font-popins font-normal cursor-pointer text-[16px] 
+      {isSignedIn ? (
+        <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+          {navLinks.map((nav, index) => (
+            <li
+              key={nav.id}
+              className={`font-redHat font-normal cursor-pointer text-[16px] 
             ${index === navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
+            >
+              <NavLink href="#" to={`/${nav.id}`}>
+                {nav.title}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-5">
+          <li
+            className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
           >
-            <NavLink href="#" to={`/${nav.id}`}>
-              {nav.title}
+            <NavLink href="#" to="./login">
+              Login
             </NavLink>
           </li>
-        ))}
-      </ul>
+          <li
+            className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
+          >
+            <NavLink href="#" to="./register">
+              Register
+            </NavLink>
+          </li>
+        </ul>
+      )}
+      {/*  */}
+
+      {isSignedIn && <button onClick={onLogout}>LOGOUT</button>}
 
       {/* ONLY FOR MOBILE DEVICES */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
