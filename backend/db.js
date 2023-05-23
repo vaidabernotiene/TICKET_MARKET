@@ -48,7 +48,7 @@ dbConnection.query("CREATE database IF NOT EXISTS ticket_manager", (err) => {
         surname varchar(255) NOT NULL,
         email varchar(255) NOT NULL,
         phone varchar(255) NOT NULL,
-        adminId int NOT NULL,
+        adminId int DEFAULT NULL,
         PRIMARY KEY (id),
         UNIQUE KEY email_UNIQUE (email),
         KEY ID (adminId),
