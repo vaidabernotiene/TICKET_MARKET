@@ -30,8 +30,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/new_user" element={<EventUserRegistrationForm />} />
-            <Route path="/users_list" element={<EventUsersList />} />
+            <Route path="/new_participant" element={<EventUserRegistrationForm />} />
+            <Route path="/participants_list" element={<EventUsersList />} />
           </Routes>
           <Footer />
         </div>
