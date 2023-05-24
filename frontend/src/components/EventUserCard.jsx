@@ -12,15 +12,14 @@ export const EventUserCard = ({ id, name, surname, email, phone }) => {
     try {
       axios.delete(`http://localhost:5000/participants_list/${id}`)
       .then((response) => {
-        console.log(response.data)
         console.log("Istrinta sekmingai")
+        console.log(response.data)
         navigate("/participants_list");
       })
     } catch (error) {
       console.log(error)
     }
   };
-
   
   return (
     <tbody className="text-[24px] ss:text-[16px]">

@@ -31,9 +31,9 @@ export const EventUserRegistrationForm = () => {
     });
   };
 
-  const backToParticipantsList = () =>{
+  const backToParticipantsList = () => {
     navigate("/participants_list");
-  }
+  };
 
   return (
     <div className="bg-blue-gradient flex justify-center items-center h-screen container">
@@ -81,9 +81,9 @@ export const EventUserRegistrationForm = () => {
             />
           </div>
           <div className="columns-2">
-            <Button text="Register" onClick={onHandleSubmit}/>
+            <Button text="Register" onClick={onHandleSubmit} />
             <div></div>
-            <Button text="Back to List" onClick={backToParticipantsList}/>
+            <Button text="Back to List" onClick={backToParticipantsList} />
           </div>
         </form>
       </div>

@@ -15,7 +15,7 @@ export const Navbar = ({ isLoading, onLogout }) => {
   };
 
   return (
-    <nav className="bg-primary w-full flex p-6 justify-between items-center navbar">
+    <nav className="bg-primary w-full flex py-6 justify-between items-center navbar">
       <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
       {isSignedIn ? (
         <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-5">

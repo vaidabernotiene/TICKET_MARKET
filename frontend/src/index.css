@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --black-gradient: linear-gradient(
     144.39deg,
@@ -17,11 +18,8 @@
 
 * {
   scroll-behavior: smooth;
-}
-
-.container {
-  height: 100%;
-  padding: 40px 0;
+  height: '100vh';
+  min-height : '100vh'
 }
 
 .text-gradient {
@@ -49,6 +47,67 @@
     #C772C7
   );
 }
+
+.theme-gradient {
+  background: linear-gradient( 
+    157.81 deg,
+    "#cccdcc",
+    "#999a99",
+    "#676866",
+    "#343533",
+    "#010300",
+    "#010200",
+    "#010200",
+    "#000100",
+    "#000100");
+       
+  }
+
+  .bg-form-gradient {
+    background: linear-gradient(
+      157.81deg,
+      #010300,
+      /* #620b1b, */
+      #f4591c
+      /* #e9c7e9 */
+    );
+  }
+  
+
+  /* black: {
+      100: "#d1cddc",
+      200: "#a39bb9",
+      300: "#756897",
+      400: "#473674",
+      500: "#190451",
+      600: "#140341",
+      700: "#0f0231",
+      800: "#0a0220",
+      900: "#050110"
+  },
+  red: {
+      100: "#fdd2d9",
+      200: "#fba4b4",
+      300: "#f8778e",
+      400: "#f64969",
+      500: "#f41c43",
+      600: "#c31636",
+      700: "#921128",
+      800: "#620b1b",
+      900: "#31060d"
+  },
+  purple: {
+      100: "#f4e3f4",
+      200: "#e9c7e9",
+      300: "#ddaadd",
+      400: "#d28ed2",
+      500: "#c772c7",
+      600: "#9f5b9f",
+      700: "#774477",
+      800: "#502e50",
+      900: "#281728"
+  }}} */
+
 
 .bg-blue-gradient {
   background: linear-gradient(
