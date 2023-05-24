@@ -26,7 +26,7 @@ export const EventUsersList = () => {
     >
       <h1 className="font-redHat font-semibold ss:text-[64px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
         Already in event -
-        <span className="text-gradient"> {setParticipant.length}.</span>
+        <span className="text-gradient"> {participant.length}.</span>
       </h1>
       {/* SEARCH BAR*/}
       {/* <input></input> */}
