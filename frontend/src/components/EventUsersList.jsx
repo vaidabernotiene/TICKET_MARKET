@@ -1,17 +1,18 @@
-import { eventUsers } from "../constants";
 import { useEffect, useState } from "react";
-import { EventUserCard } from "./EventUserCard";
+import axios from "axios";
 import styles from "../style";
+
+import { EventUserCard } from "./EventUserCard";
 
 export const EventUsersList = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [participant, setParticipant] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/adminusers-list')
-      .then(res => res.json())
-      .then(users => {
-        // setProducts(users);
-        console.log(users)
+    axios.get('http://localhost:5000/participants_list')
+      .then(list => {
+        setParticipant(list.data);
+        console.log(list)
         setIsLoading(false);
       });
   }, []);
@@ -25,7 +26,7 @@ export const EventUsersList = () => {
     >
       <h1 className="font-redHat font-semibold ss:text-[64px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
         Already in event -
-        <span className="text-gradient"> {eventUsers.length}.</span>
+        <span className="text-gradient"> {setParticipant.length}.</span>
       </h1>
       {/* SEARCH BAR*/}
       {/* <input></input> */}
@@ -34,8 +35,8 @@ export const EventUsersList = () => {
     z-[1]"
       >
       <table className="table-auto text-white ">
-        {eventUsers.map((user) => (
-          <EventUserCard key={user.id} {...user} />
+        {participant.map((user) => (
+          <EventUserCard key={user.id} {...user}/>
         ))}
         </table>
       </div>

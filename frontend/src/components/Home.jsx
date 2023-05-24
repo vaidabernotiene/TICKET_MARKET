@@ -8,7 +8,7 @@ export const Home = () => {
       {/* <img src={hero3} alt='hero_backgroundImage'>
       </img> */}
       {/* <EventUserRegistrationForm /> */}
-      <EventUsersList />
+      {/* <EventUsersList /> */}
     </div>
   );
 };

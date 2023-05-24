@@ -1,8 +1,6 @@
 import { facebook, instagram, linkedin, twitter } from "../assets";
 
-export const navLinks = [
-  {
-    nonprotected: [
+export const navLinksUnprotected = [
       {
         id: "home",
         title: "Home",
@@ -11,14 +9,13 @@ export const navLinks = [
         id: "login",
         title: "Login",
       },
-      {
+{
         id: "register",
         title: "Register",
       },
-    ],
-  },
-  {
-    protected: [
+];      
+
+export const navLinksProtected =[
       {
         id: "new_participant",
         title: "New participant",
@@ -26,10 +23,9 @@ export const navLinks = [
       {
         id: "participants_list",
         title: "Participants list",
-      },
-    ],
-  },
-];
+      },]
+      
+
 
 export const eventUsers = [
   {
