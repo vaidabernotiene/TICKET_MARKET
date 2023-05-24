@@ -19,6 +19,7 @@ export const Register = () => {
     axios
       .post("http://localhost:5000/register", formData)
       .then((response) => {
+        console.log(response)
         navigate("/login");
       })
       .catch((err) => console.log(err));

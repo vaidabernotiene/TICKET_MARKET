@@ -24,8 +24,10 @@ import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import hero from './hero.jpg'
+import hero1 from './hero1.jpg'
 import hero2 from './hero2.jpg'
 import hero3 from './hero3.jpg'
+import eror404 from './eror404.jpg'
 
 export {
   airbnb,
@@ -54,6 +56,8 @@ export {
   people02,
   people03,
   hero,
+  hero1,
   hero2,
-  hero3
+  hero3,
+  eror404,
 };

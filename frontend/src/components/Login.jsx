@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { AuthenticationContext } from "./AuthenticationContext";
 import Button from "./Button";
+import styles from "../style";
 import "../App.css";
 
 export const Login = () => {
@@ -43,7 +44,7 @@ export const Login = () => {
   return (
     <div className="theme-gradient flex justify-center items-center py-20">
       <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg">
-        <h1 className="text-3xl text-white mb-4">Login</h1>
+        <h1 className="heading2 text-3xl text-white mb-4">Login</h1>
         <form>
           <div className="mb-4">
             <input

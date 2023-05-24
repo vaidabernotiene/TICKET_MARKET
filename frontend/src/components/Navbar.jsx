@@ -16,9 +16,10 @@ export const Navbar = ({ isLoading, onLogout }) => {
 
   return (
     <nav className="bg-primary w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      <NavLink href='#' to='./home'><img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /></NavLink>
+      
       {isSignedIn ? (
-        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-5">
+        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-7">
           <li
             className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
           >
@@ -40,7 +41,7 @@ export const Navbar = ({ isLoading, onLogout }) => {
           </li>
         </ul>
       ) : (
-        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-5">
+        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-7">
           <li
             className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
           >
