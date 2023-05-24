@@ -16,8 +16,10 @@ export const Navbar = ({ isLoading, onLogout }) => {
 
   return (
     <nav className="bg-primary w-full flex py-6 justify-between items-center navbar">
-      <NavLink href='#' to='./home'><img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /></NavLink>
-      
+      <NavLink href="#" to="./home">
+        <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      </NavLink>
+
       {isSignedIn ? (
         <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-7">
           <li
@@ -36,8 +38,17 @@ export const Navbar = ({ isLoading, onLogout }) => {
           </li>
           <li
             className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
-          ><div>Hello, {username}</div>
-            <button onClick={onLogout}>LOGOUT</button>
+          >
+            <div>Hello, {username}</div>
+            <button
+              onClick={onLogout}
+              className={`py-3 w-full redHat 
+      font-medium text-[12px] text-primary 
+      bg-form-gradient rounded-[10px] text-white
+      outline-none`}
+            >
+              Log Out
+            </button>
           </li>
         </ul>
       ) : (
@@ -58,10 +69,7 @@ export const Navbar = ({ isLoading, onLogout }) => {
           </li>
         </ul>
       )}
-      {/*  */}
-
-      {isSignedIn && <button onClick={onLogout}>LOGOUT</button>}
-
+      
       {/* ONLY FOR MOBILE DEVICES */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
@@ -82,7 +90,9 @@ export const Navbar = ({ isLoading, onLogout }) => {
               <li
                 key={nav.id}
                 className={`font-redHat font-normal cursor-pointer text-[16px] 
-            ${index === navLinksProtected.length - 1 ? "mr-0" : "mb-4"} text-white`}
+            ${
+              index === navLinksProtected.length - 1 ? "mr-0" : "mb-4"
+            } text-white`}
               >
                 <NavLink href="#" to={`/${nav.id}`}>
                   {nav.title}

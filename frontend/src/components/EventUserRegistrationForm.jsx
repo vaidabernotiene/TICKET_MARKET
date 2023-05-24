@@ -36,9 +36,9 @@ export const EventUserRegistrationForm = () => {
   };
 
   return (
-    <div className="bg-blue-gradient flex justify-center items-center h-screen container">
-      <div className="w-1/2 p-6 border rounded shadow-lg ml-8 ">
-        <h1 className="text-3xl mb-4">Register New Event Participant</h1>
+    <div className="theme-gradient flex justify-center items-center py-20">
+      <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg ml-8 ">
+        <h1 className="text-white text-3xl mb-4">Register New Participant</h1>
         <form>
           <div className="mb-4">
             <input
