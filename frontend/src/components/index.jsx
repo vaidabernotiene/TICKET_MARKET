@@ -8,8 +8,10 @@ import { GetStart } from "./GetStart";
 import { EventUserCard } from "./EventUserCard";
 import { EventUserRegistrationForm } from "./EventUserRegistrationForm";
 import { EventUsersList } from "./EventUsersList";
+import { PageNotFound } from "./PageNotFound";
 
 export {
+  PageNotFound,
   Home,
   Navbar,
   Hero,

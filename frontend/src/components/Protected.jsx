@@ -32,7 +32,7 @@ const Protected = ({ isLoading, setIsLoading }) => {
   }
 
   if (!isSignedIn) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/home" />;
   }
 
   return <Outlet />;
