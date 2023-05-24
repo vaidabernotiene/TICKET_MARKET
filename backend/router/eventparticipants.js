@@ -6,14 +6,14 @@ const { defaultCallback } = require("../utills/dbUtills");
 const { verifyToken } = require("../utills/authenticationUtills");
 
 // GET ------------------------------------------------------------
-router.get("/participants_list", verifyToken, (req, res) => {
+router.get("/participants_list", (req, res) => {
   dbConnection.execute(`SELECT * FROM eventusers`, (err, result) =>
     defaultCallback(err, result, res)
   );
 });
 
 // POST ------------------------------------------------------------
-router.post("/new_participant", verifyToken, (req, res) => {
+router.post("/new_participant", (req, res) => {
   const {
     body: { name, surname, email, phone },
   } = req;
@@ -26,7 +26,7 @@ router.post("/new_participant", verifyToken, (req, res) => {
 });
 
 // PUT -------------------------------------------------------------
-router.put("/new_participant/:id", verifyToken, (req, res) => {
+router.put("/new_participant/:id", (req, res) => {
   const { id } = req.params;
   const {
     body: { name, surname, email, phone },
@@ -40,7 +40,7 @@ router.put("/new_participant/:id", verifyToken, (req, res) => {
 });
 
 // DELETE -----------------------------------------------------------
-router.delete("/participants_list/:id", verifyToken, (req, res) => {
+router.delete("/participants_list/:id", (req, res) => {
   const { id } = req.params;
 
   dbConnection.execute(
