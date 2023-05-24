@@ -17,14 +17,14 @@ export const EventUserRegistrationForm = () => {
     e.preventDefault();
     // POST request i "http://localhost:5000........"
     axios
-      .post("http://localhost:5000/register", formData)
+      .post("http://localhost:5000/new_participant", formData)
       .then((response) => {
         navigate("/participants_list");
       })
       .catch((err) => console.log(err));
   };
 
-  const handleOnChange = (e) => {
+  const onHandleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -46,6 +46,7 @@ export const EventUserRegistrationForm = () => {
               id="name"
               name="name"
               placeholder="Name"
+              onChange={onHandleChange}
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -55,6 +56,7 @@ export const EventUserRegistrationForm = () => {
               id="surnamename"
               name="surname"
               placeholder="Surname"
+              onChange={onHandleChange}
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -63,6 +65,7 @@ export const EventUserRegistrationForm = () => {
               type="email"
               id="email"
               name="email"
+              onChange={onHandleChange}
               placeholder="Email"
               className="w-full border px-4 py-2 rounded"
             />
@@ -72,12 +75,13 @@ export const EventUserRegistrationForm = () => {
               type="text"
               id="phone"
               name="phone"
+              onChange={onHandleChange}
               placeholder="Phone"
               className="w-full border px-4 py-2 rounded"
             />
           </div>
           <div className="columns-2">
-            <Button text="Register" />
+            <Button text="Register" onClick={onHandleSubmit}/>
             <div></div>
             <Button text="Back to List" onClick={backToParticipantsList}/>
           </div>
