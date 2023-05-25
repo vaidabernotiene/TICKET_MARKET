@@ -8,10 +8,28 @@ export const EventUsersList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [participant, setParticipant] = useState(null);
 
+  // DELETE participant -----------------------------------------------
+  const handleOnDelete = (id) => {
+    try {
+      axios
+        .delete(`http://localhost:5000/participants_list/${id}`)
+        .then((response) => {
+          window.location.reload();
+          console.log("Istrinta sekmingai");
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // EDIT participant -----------------------------------------------
+  const handleOnEdit = () => {};
+
+  // LIST of participants --------------------------------------------
   useEffect(() => {
     axios.get("http://localhost:5000/participants_list").then((list) => {
       setParticipant(list.data);
-      console.log(list);
+      console.log(list.data);
       setIsLoading(false);
     });
   }, []);
@@ -19,11 +37,13 @@ export const EventUsersList = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
   return (
     <section className={`${styles.paddingY} ${styles.flexCenter} flex-col`}>
-      <h1 className={`${styles.heading2} bg-form-gradient ss:text-[58px] text-[42px] text-white ss:leading-[100.8px] leading-[75px] w-full`}>
-        Already in event -
-        <span> {participant.length}.</span>
+      <h1
+        className={`${styles.heading2} bg-form-gradient ss:text-[58px] text-[42px] text-white ss:leading-[100.8px] leading-[75px] w-full`}
+      >
+        Already in event -<span> {participant.length}.</span>
       </h1>
       {/* <div className={`${styles.flexStart} relative`}>
         <span className={`absolute h-full ${styles.flexCenter}`}>
@@ -47,7 +67,12 @@ export const EventUsersList = () => {
       >
         <table className="table-auto text-white ">
           {participant.map((user) => (
-            <EventUserCard key={user.id} {...user} />
+            <EventUserCard
+              key={user.id}
+              {...user}
+              onEditBtnClick={handleOnEdit}
+              onDeleteBtnClick={handleOnDelete}
+            />
           ))}
         </table>
       </div>
