@@ -69,7 +69,7 @@ export const EventUsersList = () => {
           {participant.map((user) => (
             <EventUserCard
               key={user.id}
-              {...user}
+              eventUsers={user}
               onEditBtnClick={handleOnEdit}
               onDeleteBtnClick={handleOnDelete}
             />

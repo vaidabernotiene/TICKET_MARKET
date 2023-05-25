@@ -1,14 +1,12 @@
 import Button from "./Button";
 
 export const EventUserCard = ({
-  id,
-  name,
-  surname,
-  email,
-  phone,
+  eventUsers,
   onEditBtnClick,
   onDeleteBtnClick,
 }) => {
+  const { id, name, surname, email, phone } = eventUsers;
+
   return (
     <tbody className="text-[24px] ss:text-[16px]">
       <tr>
@@ -20,7 +18,7 @@ export const EventUserCard = ({
           <Button
             styles={`m-5`}
             text="Edit User"
-            onClick={() => onEditBtnClick(id)}
+            onClick={() => onEditBtnClick(eventUsers)}
           />
           <Button
             styles={`m-5`}
