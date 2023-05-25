@@ -26,7 +26,7 @@ router.post("/new_participant", (req, res) => {
 });
 
 // PUT -------------------------------------------------------------
-router.put("/new_participant/:id", (req, res) => {
+router.put("/participants_list/:id", (req, res) => {
   const { id } = req.params;
   const {
     body: { name, surname, email, phone },
