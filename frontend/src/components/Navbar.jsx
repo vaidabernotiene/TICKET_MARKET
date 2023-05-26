@@ -22,20 +22,17 @@ export const Navbar = ({ isLoading, onLogout }) => {
 
       {isSignedIn ? (
         <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-7">
-          <li
-            className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
-          >
-            <NavLink href="#" to="./new_participant">
-              New participant
-            </NavLink>
-          </li>
-          <li
-            className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
-          >
-            <NavLink href="#" to="./participants_list">
-              Participants List
-            </NavLink>
-          </li>
+          {navLinksProtected.map((nav) => (
+            <li
+              key={nav.id}
+              className={`font-redHat font-normal cursor-pointer text-[16px] 
+              text-white`}
+            >
+              <NavLink href="#" to={`/${nav.id}`}>
+                {nav.title}
+              </NavLink>
+            </li>
+          ))}
           <li
             className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
           >
@@ -53,23 +50,20 @@ export const Navbar = ({ isLoading, onLogout }) => {
         </ul>
       ) : (
         <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-7">
-          <li
-            className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
-          >
-            <NavLink href="#" to="./login">
-              Login
-            </NavLink>
-          </li>
-          <li
-            className={`font-redHat font-normal cursor-pointer text-[16px] "mr-0" : "mr-10"} text-white`}
-          >
-            <NavLink href="#" to="./register">
-              Register
-            </NavLink>
-          </li>
+          {navLinksUnprotected.map((nav) => (
+            <li
+              key={nav.id}
+              className={`font-redHat font-normal cursor-pointer text-[16px] 
+              text-white`}
+            >
+              <NavLink href="#" to={`/${nav.id}`}>
+                {nav.title}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       )}
-      
+
       {/* ONLY FOR MOBILE DEVICES */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
@@ -86,12 +80,12 @@ export const Navbar = ({ isLoading, onLogout }) => {
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex flex-col justify-end items-center flex-1">
-            {navLinksProtected.map((nav, index) => (
+            {navLinksUnprotected.map((nav, index) => (
               <li
                 key={nav.id}
                 className={`font-redHat font-normal cursor-pointer text-[16px] 
             ${
-              index === navLinksProtected.length - 1 ? "mr-0" : "mb-4"
+              index === navLinksUnprotected.length - 1 ? "mr-0" : "mb-4"
             } text-white`}
               >
                 <NavLink href="#" to={`/${nav.id}`}>

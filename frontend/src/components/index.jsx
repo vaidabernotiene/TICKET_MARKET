@@ -7,6 +7,7 @@ import { EventUserCard } from "./EventUserCard";
 import { EventUserRegistrationForm } from "./EventUserRegistrationForm";
 import { EventUsersList } from "./EventUsersList";
 import { PageNotFound } from "./PageNotFound";
+import { EditEventUser } from "./EditEventUser";
 
 export {
   PageNotFound,
@@ -18,4 +19,5 @@ export {
   EventUserRegistrationForm,
   EventUserCard,
   EventUsersList,
+  EditEventUser
 };
