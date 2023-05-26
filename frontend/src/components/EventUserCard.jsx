@@ -17,7 +17,7 @@ export const EventUserCard = ({
         <td className="flex justify-end">
           <Button
             styles={`m-5`}
-            text="Edit User"
+            text="Edit"
             onClick={() => onEditBtnClick(eventUsers)}
           />
           <Button

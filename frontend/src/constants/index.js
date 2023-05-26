@@ -18,69 +18,36 @@ export const navLinksUnprotected = [
 export const navLinksProtected =[
       {
         id: "new_participant",
-        title: "New participant",
+        title: "Add New User",
       },
       {
         id: "participants_list",
-        title: "Participants list",
+        title: "List",
       },]
       
-
-
-export const eventUsers = [
-  {
-    id: 0,
-    name: "Lina",
-    surname: "Linute",
-    email: "lina@gmail.com",
-    phone: "+37068698625",
-  },
-  {
-    id: 1,
-    name: "Benas",
-    surname: "Beniusis",
-    email: "benas@gmail.com",
-    phone: "+37068295525",
-  },
-  {
-    id: 2,
-    name: "Rimas",
-    surname: "Rimukas",
-    email: "rimas@gmail.com",
-    phone: "+37068295525",
-  },
-  {
-    id: 3,
-    name: "Loreta",
-    surname: "Loretyte",
-    email: "loreta@gmail.com",
-    phone: "+37068295525",
-  },
-];
-
 export const footerLinks = [
   {
     title: "Useful Links",
     links: [
       {
         name: "Content",
-        link: "https://www.hoobank.com/content/",
+        link: "https://www.google.com/content/",
       },
       {
         name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        link: "https://www.google.com/how-it-works/",
       },
       {
         name: "Create",
-        link: "https://www.hoobank.com/create/",
+        link: "https://www.google.com/create/",
       },
       {
         name: "Explore",
-        link: "https://www.hoobank.com/explore/",
+        link: "https://www.google.com/explore/",
       },
       {
         name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        link: "https://www.google.com/terms-and-services/",
       },
     ],
   },
@@ -89,23 +56,19 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        link: "https://www.google.com/help-center/",
       },
       {
         name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        link: "https://www.google.com/partners/",
       },
       {
         name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
-      },
-      {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
+        link: "https://www.google.com/suggestions/",
       },
       {
         name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        link: "https://www.google.com/newsletters/",
       },
     ],
   },
