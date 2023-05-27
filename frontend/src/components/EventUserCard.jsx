@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Button from "./Button";
 import styles from "../style";
-import { Modal } from './Modal';
+import { Modal } from "./Modal";
 
 export const EventUserCard = ({
   eventUsers,
@@ -37,12 +37,13 @@ export const EventUserCard = ({
             text="Edit"
             onClick={() => onEditBtnClick(eventUsers)}
           />
-          <Button
-            styles={`m-5`}
-            text="Delete"
-            onClick={handleDeleteClick}
+          <Button styles={`m-5`} text="Delete" onClick={handleDeleteClick} />
+          <Modal
+            text="Do you really want to remove this user?"
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            onConfirm={handleConfirmDelete}
           />
-          <Modal isOpen={isModalOpen} onClose={handleCloseModal} onConfirm={handleConfirmDelete} />
         </td>
       </tr>
     </tbody>
