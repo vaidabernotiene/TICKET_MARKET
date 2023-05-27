@@ -1,10 +1,20 @@
 import React, { useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import { PageNotFound, Protected, AuthenticationContext, Navbar,
-  Home, Login, Register, EventUserRegistrationForm, EventUsersList,
-  EditEventUser, Footer } from "./components";
+import {
+  PageNotFound,
+  Navbar,
+  Home,
+  Login,
+  Register,
+  EventUserRegistrationForm,
+  EventUsersList,
+  EditEventUser,
+  Footer,
+} from "./components";
 import "./App.css";
 import styles from "./style";
+import { AuthenticationContext } from "./components/AuthenticationContext";
+import Protected from "./components/Protected";
 
 function App() {
   const { setIsSignedIn } = useContext(AuthenticationContext);
@@ -21,7 +31,7 @@ function App() {
         <div className={`${styles.boxWidth}`}>
           <Navbar isLoading={isLoading} onLogout={handleLogout} />
           <Routes>
-            <Route path="*" element={<PageNotFound />}/>
+            <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />

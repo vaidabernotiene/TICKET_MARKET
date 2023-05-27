@@ -3,7 +3,6 @@ const router = express.Router();
 
 const { dbConnection } = require("../db");
 const { defaultCallback } = require("../utills/dbUtills");
-const { verifyToken } = require("../utills/authenticationUtills");
 
 // GET ------------------------------------------------------------
 router.get("/participants_list", (req, res) => {

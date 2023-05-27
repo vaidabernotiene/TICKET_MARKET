@@ -1,30 +1,33 @@
 import { facebook, instagram, linkedin, twitter } from "../assets";
 
-export const navLinksUnprotected = [
-      {
-        id: "home",
-        title: "Home",
-      },
-      {
-        id: "login",
-        title: "Login",
-      },
-{
-        id: "register",
-        title: "Register",
-      },
-];      
+export const HTTP = "http://localhost:5000";
 
-export const navLinksProtected =[
-      {
-        id: "new_participant",
-        title: "Add New User",
-      },
-      {
-        id: "participants_list",
-        title: "List",
-      },]
-      
+export const navLinksUnprotected = [
+  {
+    id: "home",
+    title: "Home",
+  },
+  {
+    id: "login",
+    title: "Login",
+  },
+  {
+    id: "register",
+    title: "Register",
+  },
+];
+
+export const navLinksProtected = [
+  {
+    id: "new_participant",
+    title: "Add New User",
+  },
+  {
+    id: "participants_list",
+    title: "List",
+  },
+];
+
 export const footerLinks = [
   {
     title: "Useful Links",

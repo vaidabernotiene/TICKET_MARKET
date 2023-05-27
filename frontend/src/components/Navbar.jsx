@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { close, logo, menu } from "../assets";
 import { navLinksProtected, navLinksUnprotected } from "../constants";
 import { AuthenticationContext } from "./AuthenticationContext";
+import styles from "../style";
 
 export const Navbar = ({ isLoading, onLogout }) => {
   const { isSignedIn } = useContext(AuthenticationContext);
@@ -14,7 +15,9 @@ export const Navbar = ({ isLoading, onLogout }) => {
   };
 
   return (
-    <nav className="bg-primary w-full flex py-6 justify-between items-center navbar">
+    <nav
+      className={`bg-primary ${styles.boxWidth} ${styles.flexBetween} ${styles.paddingY} items-center navbar`}
+    >
       <NavLink href="#" to="./home">
         <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
       </NavLink>

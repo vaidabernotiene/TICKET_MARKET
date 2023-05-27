@@ -9,14 +9,10 @@ module.exports = {
         primary: "#00040f",
         secondary: "#f41c43",
         dimWhite: "rgba(255, 255, 255, 0.7)",
-        dimBlue: "rgba(9, 151, 124, 0.1)",
       },
       fontFamily: {
         redHat: ["Red Hat Display", "sans-serif"],
       },
-      // backgroundImage:{
-      //   image:"c:/Users/Vaida/OneDrive/Stalinis kompiuteris/FEUA1/TICKET_MARKET/frontend/src/assets/hero3.jpg",
-      // },
     },
     screens: {
       xs: "480px",

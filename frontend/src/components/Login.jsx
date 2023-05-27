@@ -69,7 +69,7 @@ export const Login = () => {
           <Button text="Login" onClick={handleOnSubmit} />
         </form>
         {error && <div>{error}</div>}
-        <p className="pt-5 text-white">
+        <p className={styles.paragraph}>
           Need an Account? Click <Link to="/register" className="hover:underline">HERE</Link>
         </p>
       </div>

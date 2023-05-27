@@ -1,4 +1,5 @@
 import Button from "./Button";
+import styles from "../style";
 
 export const EventUserCard = ({
   eventUsers,
@@ -8,8 +9,8 @@ export const EventUserCard = ({
   const { id, name, surname, email, phone } = eventUsers;
 
   return (
-    <tbody className="text-[24px] ss:text-[16px]">
-      <tr>
+    <tbody className={`${styles.paragraph}`}>
+      <tr className="text-[16px]">
         <td>{name}</td>
         <td>{surname}</td>
         <td>{email}</td>
