@@ -22,22 +22,6 @@
   min-height : '100vh'
 }
 
-.text-gradient {
-  background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #def9fa 0.89%,
-    #bef3f5 17.23%,
-    #9dedf0 42.04%,
-    #7de7eb 55.12%,
-    #5ce1e6 71.54%,
-    #33bbcf 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
 .bg-violet-gradient {
   background: linear-gradient(
     157.81deg,
@@ -72,54 +56,6 @@
       /* #e9c7e9 */
     );
   }
-  
-
-  /* black: {
-      100: "#d1cddc",
-      200: "#a39bb9",
-      300: "#756897",
-      400: "#473674",
-      500: "#190451",
-      600: "#140341",
-      700: "#0f0231",
-      800: "#0a0220",
-      900: "#050110"
-  },
-  red: {
-      100: "#fdd2d9",
-      200: "#fba4b4",
-      300: "#f8778e",
-      400: "#f64969",
-      500: "#f41c43",
-      600: "#c31636",
-      700: "#921128",
-      800: "#620b1b",
-      900: "#31060d"
-  },
-  purple: {
-      100: "#f4e3f4",
-      200: "#e9c7e9",
-      300: "#ddaadd",
-      400: "#d28ed2",
-      500: "#c772c7",
-      600: "#9f5b9f",
-      700: "#774477",
-      800: "#502e50",
-      900: "#281728"
-  }}} */
-
-
-.bg-blue-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
-    #7de7eb 29.82%,
-    #5ce1e6 51.94%,
-    #33bbcf 90.29%
-  );
-}
 
 .bg-black-gradient {
   background: linear-gradient(
@@ -180,41 +116,4 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-}
-
-.feature-card:hover {
-  background: var(--black-gradient);
-  box-shadow: var(--card-shadow);
-}
-
-.feedback-container .feedback-card:last-child {
-  margin-right: 0px;
-}
-
-.feedback-card {
-  background: transparent;
-}
-
-.feedback-card:hover {
-  background: var(--black-gradient);
-}
-
-.clients-card:hover {
-  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
-
-}
-
-.blue__gradient {
-  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
-  filter: blur(123px);
-}
-
-.pink__gradient {
-  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
-  filter: blur(900px);
-}
-
-.white__gradient {
-  background: rgba(255, 255, 255, 0.6);
-  filter: blur(750px);
 }

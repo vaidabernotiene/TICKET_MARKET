@@ -1,10 +1,12 @@
 import { eror404 } from "../assets";
+import styles from "../style";
 
 export const PageNotFound = () => {
-    console.log('Uuuups... maybe you lost?')
+  
+  console.log("Uuuups... maybe you lost?");
   return (
-    <div className="h-full overflow-hidden">
+    <section className={`${styles.flexCenter}`}>
       <img src={eror404} alt="PageNotFound"></img>
-    </div>
+    </section>
   );
 };

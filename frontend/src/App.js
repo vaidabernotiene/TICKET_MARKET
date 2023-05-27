@@ -1,17 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import {
-  PageNotFound,
-  Navbar,
-  Home,
-  Login,
-  Register,
-  EventUserRegistrationForm,
-  EventUsersList,
-  Footer,
-} from "./components";
-import { AuthenticationContext } from "./components/AuthenticationContext";
-import Protected from "./components/Protected";
+import { PageNotFound, Protected, AuthenticationContext, Navbar,
+  Home, Login, Register, EventUserRegistrationForm, EventUsersList,
+  EditEventUser, Footer } from "./components";
 import "./App.css";
 import styles from "./style";
 
@@ -45,6 +36,7 @@ function App() {
                 element={<EventUserRegistrationForm />}
               />
               <Route path="/participants_list" element={<EventUsersList />} />
+              <Route path="/edit" element={<EditEventUser />} />
             </Route>
           </Routes>
           <Footer />

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { close, logo, menu } from "../assets";
 import { navLinksProtected, navLinksUnprotected } from "../constants";
 import { AuthenticationContext } from "./AuthenticationContext";
-import Button from "./Button";
 
 export const Navbar = ({ isLoading, onLogout }) => {
   const { isSignedIn } = useContext(AuthenticationContext);

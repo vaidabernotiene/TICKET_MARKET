@@ -4,10 +4,6 @@ import { footerLinks, socialMedia } from "../constants";
 
 export const Footer = () => {
 
-  // const onLinkClick = () => {
-  //   socialMedia.map((social) => window.open(social.link));
-    
-  // };
   return (
     <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
