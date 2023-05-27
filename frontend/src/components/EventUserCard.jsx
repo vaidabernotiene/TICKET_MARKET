@@ -1,12 +1,28 @@
+import React, { useState } from 'react';
 import Button from "./Button";
 import styles from "../style";
+import {Modal} from './Modal';
 
 export const EventUserCard = ({
   eventUsers,
   onEditBtnClick,
-  onDeleteBtnClick,
+  onHandlerDelete,
 }) => {
   const { id, name, surname, email, phone } = eventUsers;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDeleteClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleConfirmDelete = () => {
+    onHandlerDelete(id);
+    setIsModalOpen(false);
+  };
 
   return (
     <tbody className={`${styles.paragraph}`}>
@@ -24,8 +40,9 @@ export const EventUserCard = ({
           <Button
             styles={`m-5`}
             text="Delete"
-            onClick={() => onDeleteBtnClick(id)}
+            onClick={handleDeleteClick}
           />
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal} onConfirm={handleConfirmDelete} />
         </td>
       </tr>
     </tbody>

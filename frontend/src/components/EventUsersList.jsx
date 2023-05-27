@@ -9,11 +9,12 @@ export const EventUsersList = () => {
   const [participant, setParticipant] = useState(null);
 
   // DELETE participant -----------------------------------------------
-  const handleOnDelete = (id) => {
-    try {
+  const handleUserDelete = (id) => {
+    console.log(id)
+     try {
       axios
         .delete(`http://localhost:5000/participants_list/${id}`)
-        .then((response) => {
+        .then((response) => {          
           window.location.reload();
           console.log("Istrinta sekmingai");
         });
@@ -22,12 +23,14 @@ export const EventUsersList = () => {
     }
   };
 
+
   // EDIT participant -----------------------------------------------
   const handleOnEdit = () => {};
 
   // LIST of participants --------------------------------------------
   useEffect(() => {
-    axios.get("http://localhost:5000/participants_list").then((list) => {
+    axios.get("http://localhost:5000/participants_list")
+    .then((list) => {
       setParticipant(list.data);
       setIsLoading(false);
     });
@@ -55,11 +58,11 @@ export const EventUsersList = () => {
               key={user.id}
               eventUsers={user}
               onEditBtnClick={handleOnEdit}
-              onDeleteBtnClick={handleOnDelete}
+              onHandlerDelete={handleUserDelete}
             />
           ))}
         </table>
-      </div>
+  </div>
     </section>
   );
 };
