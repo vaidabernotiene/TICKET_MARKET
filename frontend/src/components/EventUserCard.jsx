@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from "./Button";
 import styles from "../style";
-import {Modal} from './Modal';
+import { Modal } from './Modal';
 
 export const EventUserCard = ({
   eventUsers,
