@@ -8,6 +8,7 @@ This project was styled with:
 # Tailwind CSS.
 
 ### Aditional installs:
+
 # Axios
 
 ## Available Scripts

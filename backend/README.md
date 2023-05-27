@@ -12,3 +12,11 @@ You may also see any lint errors in the console.
 # express
 # dotenv
 # mysql2
+
+### create .env file and fill with your own parametres
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_PORT=
+
+JWT_SECRET=
