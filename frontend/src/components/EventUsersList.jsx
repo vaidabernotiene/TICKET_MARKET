@@ -41,7 +41,7 @@ export const EventUsersList = () => {
   }
 
   return (
-    <section className={`${styles.paddingY} ${styles.flexCenter} flex-col`}>
+    <section className={`${styles.flexCenter} flex-col`}>
       <h1
         className={`${styles.boxWidth} ${styles.heading2} ${styles.paddingX}
         bg-form-gradient sm:text-[24px]`}
