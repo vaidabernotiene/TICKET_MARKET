@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 import Button from "./Button";
+import { Toast } from "./Toast";
 
 export const EventUserRegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +13,21 @@ export const EventUserRegistrationForm = () => {
     phone: "",
   });
   const navigate = useNavigate();
+  const [showToast, setShowToast] = useState(false);
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
+
+    setShowToast(true)
     // POST request i "http://localhost:5000........"
     axios
       .post("http://localhost:5000/new_participant", formData)
       .then((response) => {
-        navigate("/participants_list");
+        setTimeout(() => {
+          setShowToast(false);
+          navigate("/participants_list");
+        }, 3000);
+        // 
       })
       .catch((err) => console.log(err));
   };
@@ -29,6 +37,10 @@ export const EventUserRegistrationForm = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const hideToast = () => {
+    setShowToast(false);
   };
 
   const backToParticipantsList = () => {
@@ -47,6 +59,7 @@ export const EventUserRegistrationForm = () => {
               name="name"
               placeholder="Name"
               onChange={onHandleChange}
+           
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -57,6 +70,7 @@ export const EventUserRegistrationForm = () => {
               name="surname"
               placeholder="Surname"
               onChange={onHandleChange}
+ 
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -67,6 +81,7 @@ export const EventUserRegistrationForm = () => {
               name="email"
               onChange={onHandleChange}
               placeholder="Email"
+
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -77,15 +92,22 @@ export const EventUserRegistrationForm = () => {
               name="phone"
               onChange={onHandleChange}
               placeholder="Phone"
+
               className="w-full border px-4 py-2 rounded"
             />
           </div>
           <div className="columns-2">
-            <Button text="Register" onClick={onHandleSubmit} />
+            <Button text="Register" onClick={onHandleSubmit}/>
             <div></div>
             <Button text="Back to List" onClick={backToParticipantsList} />
           </div>
         </form>
+
+     <Toast
+        text="User registration successfull!"
+        show={showToast}
+        hide={hideToast}
+      />
       </div>
     </div>
   );
