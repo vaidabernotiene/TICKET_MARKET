@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { AuthenticationContext } from "./AuthenticationContext";
+import { HTTP } from "../constants";
 import Button from "./Button";
 import styles from "../style";
 import "../App.css";
@@ -19,9 +20,8 @@ export const Login = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    
     axios
-      .post("http://localhost:5000/login", formData)
+      .post(HTTP + "/login", formData)
       .then((response) => {
         if (response.data.token) {
           localStorage.setItem("token", response.data.token);
@@ -43,9 +43,9 @@ export const Login = () => {
   };
 
   return (
-    <div className="theme-gradient flex justify-center items-center py-20">
+    <div className={`${styles.flexCenter} theme-gradient py-20`}>
       <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg">
-        <h1 className="heading2 text-3xl text-white mb-4">Login</h1>
+        <h1 className={`${styles.heading2} text-3xl mb-4`}>Login</h1>
         <form>
           <div className="mb-4">
             <input
@@ -71,7 +71,10 @@ export const Login = () => {
         </form>
         {error && <div>{error}</div>}
         <p className={styles.paragraph}>
-          Need an Account? Click <Link to="/register" className="hover:underline">HERE</Link>
+          Need an Account? Click{" "}
+          <Link to="/register" className="hover:underline">
+            HERE
+          </Link>
         </p>
       </div>
     </div>

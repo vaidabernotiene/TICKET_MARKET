@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
+import styles from "../style";
 import "../App.css";
 import Button from "./Button";
 
@@ -32,9 +34,9 @@ export const Register = () => {
   };
 
   return (
-    <div className="theme-gradient flex justify-center items-center py-20">
-      <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg ">
-        <h1 className="text-3xl text-white mb-4">Register</h1>
+    <div className={`${styles.flexCenter} theme-gradient py-20`}>
+      <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg">
+        <h1 className={`${styles.heading2} text-3xl mb-4`}>Register</h1>
         <form>
           <div className="mb-4">
             <input
@@ -78,8 +80,11 @@ export const Register = () => {
           </div>
           <Button text="Register" onClick={onHandleSubmit}></Button>
         </form>
-        <p className="pt-5 text-white">
-          Already have an Account? Click <Link to="/login" className="hover:underline">HERE</Link>
+        <p className={styles.paragraph}>
+          Already have an Account? Click{" "}
+          <Link to="/login" className="hover:underline">
+            HERE
+          </Link>
         </p>
       </div>
     </div>

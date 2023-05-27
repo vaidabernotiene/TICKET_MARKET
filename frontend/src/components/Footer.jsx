@@ -3,7 +3,6 @@ import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
 
 export const Footer = () => {
-
   return (
     <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
@@ -14,7 +13,7 @@ export const Footer = () => {
             className="w-[266px] h-[72.14px] object-contain"
           />
           <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
-          Managing ticket orders has never been so easy!
+            Managing ticket orders has never been so easy!
           </p>
         </div>
 
@@ -35,7 +34,9 @@ export const Footer = () => {
                       // applay margin for all but not the last one
                       index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                     }`}
-                    onClick={()=>{window.open(link.link)}}
+                    onClick={() => {
+                      window.open(link.link);
+                    }}
                   >
                     {link.name}
                   </li>
@@ -60,7 +61,9 @@ export const Footer = () => {
               className={`w-[21px] h-[21px] object-contain cursor-pointer ${
                 index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
               }`}
-              onClick={()=>{window.open(social.link)}}
+              onClick={() => {
+                window.open(social.link);
+              }}
             />
           ))}
         </div>

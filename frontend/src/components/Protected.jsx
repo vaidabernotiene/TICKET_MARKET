@@ -1,7 +1,9 @@
 import { useContext, useEffect } from "react";
 import { Outlet, Navigate, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+
 import { AuthenticationContext } from "./AuthenticationContext";
+import { HTTP } from "../constants";
 
 const Protected = ({ isLoading, setIsLoading }) => {
   const { isSignedIn, setIsSignedIn } = useContext(AuthenticationContext);
@@ -12,7 +14,7 @@ const Protected = ({ isLoading, setIsLoading }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:5000/token/verify", {
+      .get(HTTP + "/token/verify", {
         headers: {
           authorization: "Bearer " + token,
         },

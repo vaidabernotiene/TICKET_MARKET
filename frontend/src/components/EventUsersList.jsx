@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "../style";
 
 import { EventUserCard } from "./EventUserCard";
+import { HTTP } from "../constants";
 
 export const EventUsersList = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,26 +11,24 @@ export const EventUsersList = () => {
 
   // DELETE participant -----------------------------------------------
   const handleUserDelete = (id) => {
-    console.log(id)
-     try {
-      axios
-        .delete(`http://localhost:5000/participants_list/${id}`)
-        .then((response) => {          
-          window.location.reload();
-          console.log("Istrinta sekmingai");
-        });
+    console.log(id);
+    try {
+      axios.delete(`${HTTP}/participants_list/${id}`)
+      .then((response) => {
+        window.location.reload();
+        console.log("Istrinta sekmingai");
+      });
     } catch (error) {
       console.log(error);
     }
   };
-
 
   // EDIT participant -----------------------------------------------
   const handleOnEdit = () => {};
 
   // LIST of participants --------------------------------------------
   useEffect(() => {
-    axios.get("http://localhost:5000/participants_list")
+    axios.get(HTTP + "/participants_list")
     .then((list) => {
       setParticipant(list.data);
       setIsLoading(false);
@@ -62,7 +61,7 @@ export const EventUsersList = () => {
             />
           ))}
         </table>
-  </div>
+      </div>
     </section>
   );
 };

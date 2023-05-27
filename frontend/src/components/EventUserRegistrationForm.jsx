@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import "../App.css";
+import styles from "../style";
+import { HTTP } from "../constants";
 import Button from "./Button";
 import { Toast } from "./Toast";
 
@@ -18,16 +21,16 @@ export const EventUserRegistrationForm = () => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
 
-    setShowToast(true)
+    setShowToast(true);
     // POST request i "http://localhost:5000........"
     axios
-      .post("http://localhost:5000/new_participant", formData)
+      .post(HTTP + "/new_participant", formData)
       .then((response) => {
         setTimeout(() => {
           setShowToast(false);
           navigate("/participants_list");
         }, 3000);
-        // 
+        //
       })
       .catch((err) => console.log(err));
   };
@@ -48,9 +51,9 @@ export const EventUserRegistrationForm = () => {
   };
 
   return (
-    <div className="theme-gradient flex justify-center items-center py-20">
-      <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg ml-8 ">
-        <h1 className="text-white text-3xl mb-4">Register New Participant</h1>
+    <div className={`${styles.flexCenter} theme-gradient py-20`}>
+      <div className="bg-form-gradient w-1/2 p-6 border rounded shadow-lg">
+        <h1 className={`${styles.heading2} text-3xl mb-4`}>Register NEW participant</h1>
         <form>
           <div className="mb-4">
             <input
@@ -59,7 +62,6 @@ export const EventUserRegistrationForm = () => {
               name="name"
               placeholder="Name"
               onChange={onHandleChange}
-           
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -70,7 +72,6 @@ export const EventUserRegistrationForm = () => {
               name="surname"
               placeholder="Surname"
               onChange={onHandleChange}
- 
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -81,7 +82,6 @@ export const EventUserRegistrationForm = () => {
               name="email"
               onChange={onHandleChange}
               placeholder="Email"
-
               className="w-full border px-4 py-2 rounded"
             />
           </div>
@@ -92,22 +92,21 @@ export const EventUserRegistrationForm = () => {
               name="phone"
               onChange={onHandleChange}
               placeholder="Phone"
-
               className="w-full border px-4 py-2 rounded"
             />
           </div>
           <div className="columns-2">
-            <Button text="Register" onClick={onHandleSubmit}/>
+            <Button text="Register" onClick={onHandleSubmit} />
             <div></div>
             <Button text="Back to List" onClick={backToParticipantsList} />
           </div>
         </form>
 
-     <Toast
-        text="User registration successfull!"
-        show={showToast}
-        hide={hideToast}
-      />
+        <Toast
+          text="User registration successfull!"
+          show={showToast}
+          hide={hideToast}
+        />
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import { close, logo, menu } from "../assets";
 import { navLinksProtected, navLinksUnprotected } from "../constants";
 import { AuthenticationContext } from "./AuthenticationContext";
 import styles from "../style";
 
-export const Navbar = ({ isLoading, onLogout }) => {
+export const Navbar = ({ onLogout }) => {
   const { isSignedIn } = useContext(AuthenticationContext);
   const { username } = useContext(AuthenticationContext);
   const [toggle, setToggle] = useState(false);
