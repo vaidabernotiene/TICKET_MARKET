@@ -23,9 +23,6 @@ export const EventUsersList = () => {
     }
   };
 
-  // EDIT participant -----------------------------------------------
-  const handleOnEdit = () => {};
-
   // LIST of participants --------------------------------------------
   useEffect(() => {
     axios.get(HTTP + "/participants_list")
@@ -56,7 +53,6 @@ export const EventUsersList = () => {
             <EventUserCard
               key={user.id}
               eventUsers={user}
-              onEditBtnClick={handleOnEdit}
               onHandlerDelete={handleUserDelete}
             />
           ))}

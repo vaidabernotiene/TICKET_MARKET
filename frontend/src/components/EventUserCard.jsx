@@ -5,7 +5,6 @@ import { Modal } from "./Modal";
 
 export const EventUserCard = ({
   eventUsers,
-  onEditBtnClick,
   onHandlerDelete,
 }) => {
   const { id, name, surname, email, phone } = eventUsers;
@@ -32,11 +31,6 @@ export const EventUserCard = ({
         <td>{email}</td>
         <td>{phone}</td>
         <td className="flex justify-end">
-          <Button
-            styles={`m-5`}
-            text="Edit"
-            onClick={() => onEditBtnClick(eventUsers)}
-          />
           <Button styles={`m-5`} text="Delete" onClick={handleDeleteClick} />
           <Modal
             text="Do you really want to remove this user?"
