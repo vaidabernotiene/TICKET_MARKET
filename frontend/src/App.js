@@ -55,7 +55,11 @@ function App() {
               path="/register"
               element={isSignedIn ? <Navigate to="/" /> : <Register />}
             />
-            <Route element={<Protected />}>
+            <Route
+              element={
+                <Protected setIsLoading={setIsLoading} />
+              }
+            >
               <Route
                 path="/new_participant"
                 element={<EventUserRegistrationForm />}
