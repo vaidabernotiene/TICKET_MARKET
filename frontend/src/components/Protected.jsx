@@ -34,6 +34,7 @@ const Protected = ({ isLoading, setIsLoading }) => {
   }
 
   if (!isSignedIn) {
+    console.log('Successfully Logged out!')
     return <Navigate to="/home" />;
   }
 

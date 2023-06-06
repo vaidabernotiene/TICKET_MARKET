@@ -27,7 +27,7 @@ export const Login = () => {
           localStorage.setItem("token", response.data.token);
           setIsSignedIn(true);
           navigate("/participants_list");
-          console.log("Succesfully Logged in!");
+          console.log("Successfully Logged in!");
         } else {
           setError(response.data.message);
         }

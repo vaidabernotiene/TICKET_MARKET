@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import {
   PageNotFound,
   Navbar,
@@ -17,8 +17,9 @@ import { AuthenticationContext } from "./components/AuthenticationContext";
 import Protected from "./components/Protected";
 
 function App() {
-  const { setIsSignedIn } = useContext(AuthenticationContext);
+  const { isSignedIn, setIsSignedIn } = useContext(AuthenticationContext);
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -29,18 +30,32 @@ function App() {
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <Navbar isLoading={isLoading} onLogout={handleLogout} />
+          {location.pathname === "/" ||
+          location.pathname === "/home" ||
+          location.pathname === "/login" ||
+          location.pathname === "/register" ||
+          location.pathname === "/participants_list" ||
+          location.pathname === "/edit" ? (
+            <Navbar isLoading={isLoading} onLogout={handleLogout} />
+          ) : (
+            <></>
+          )}
           <Routes>
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
             <Route
-              element={
-                <Protected isLoading={isLoading} setIsLoading={setIsLoading} />
-              }
-            >
+              path="/home"
+              element={isSignedIn ? <Navigate to="/" /> : <Home />}
+            />
+            <Route
+              path="/login"
+              element={isSignedIn ? <Navigate to="/" /> : <Login />}
+            />
+            <Route
+              path="/register"
+              element={isSignedIn ? <Navigate to="/" /> : <Register />}
+            />
+            <Route element={<Protected />}>
               <Route
                 path="/new_participant"
                 element={<EventUserRegistrationForm />}
